@@ -6,30 +6,22 @@
     <title>My First Chrome Extension</title>
 
     <script src="bower_components/angular/angular.js"></script>
-
     <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="popup.css">
     
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
      <!-- angular cdn -->
 
     
   </head>
   <body ng-controller="wishListCtrl">
 
-     <div>Test: {{ url }}</div>
+     <!-- <div>{{ url }}</div> -->
 
+     <div>{{ message }}</div>
+     <div>{{ title }}</div>
+     <div>{{ url }}</div>
+
+    
   </body>
 </html>
 

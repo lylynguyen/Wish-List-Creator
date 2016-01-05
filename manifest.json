@@ -13,14 +13,11 @@
 
   "content_scripts": [
     {
-      "matches": ["http://www.google.com/*"],
-      "js": ["bower_components/angular/angular.js", "popup.js", "url.js"]
+      "matches": ["*://*/*"],
+      "js": ["bower_components/angular/angular.js", "popup.js", "url.js"],
+      "run_at": "document_start"
     }
   ],
 
-  "permissions": [
-    "tabs",
-    "activeTab",
-    "https://ajax.googleapis.com/*"
-  ]
+  "permissions": ["http://*/*", "https://*/*", "unlimitedStorage", "contextMenus", "cookies", "tabs"]
 }
