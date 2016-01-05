@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+
+<html ng-app="wishListApp" ng-csp>
+  <head>
+    <title>My First Chrome Extension</title>
+
+    <script src="/node_modules/angular/angular.js"></script>
+
+    <script src="popup.js"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+     <!-- angular cdn -->
+
+    
+  </head>
+  <body ng-controller="wishListCtrl">
+
+     <div>Test: {{ url }}</div>
+
+  </body>
+</html>
+
