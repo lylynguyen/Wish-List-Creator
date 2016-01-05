@@ -9,5 +9,3 @@ wishListApp.controller('wishListCtrl', function($scope, wishListFactory){
   $scope.url = wishListFactory.url;
 
 });
-
-
