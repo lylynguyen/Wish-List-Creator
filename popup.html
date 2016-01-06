@@ -6,22 +6,24 @@
     <title>My First Chrome Extension</title>
 
     <script src="bower_components/angular/angular.js"></script>
-    <script src="popup.js"></script>
-    <link rel="stylesheet" type="text/css" href="popup.css">
-    
-     <!-- angular cdn -->
-
+    <script src="js/popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
     
   </head>
   <body ng-controller="wishListCtrl">
 
-     <!-- <div>{{ url }}</div> -->
+     <!-- <div class="message">message : {{ message }}</div> -->
+     <!-- <input ng-model="test"> -->
+     <div class="product">Product Name: {{ productName }}</div>
+     <div class="url">Product Url: {{ url }}</div>
+     <!-- <div class="model">tab: {{ response }}</div> -->
 
-     <div>{{ message }}</div>
-     <div>{{ title }}</div>
-     <div>{{ url }}</div>
+    <form class="price-form">
+      Price: <input type="number" ng-model="price"><input ng-click="save()" type="submit">
+      <!-- <span id="currency-default">{{ amount | currency }}</span> -->
+    </form> 
 
-    
+    <!-- <input ng-model="test">    -->
   </body>
 </html>
 

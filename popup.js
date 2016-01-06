@@ -35,7 +35,3 @@ wishListApp.controller('wishListCtrl', function($scope, wishListService){
     $scope.$apply();
   });
 });
-
-
-
-
