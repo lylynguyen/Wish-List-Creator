@@ -24,34 +24,16 @@ wishListApp.service('wishListService', function() {
 });
 
 wishListApp.controller('wishListCtrl', function($scope, wishListService){
-
-  // wishListService.getUrl(function(info){
-  //   $scope.productName = info.productName;
-  //   $scope.url = info.url;
-  //   $scope.getUrls = info.getUrls;
-  //   $scope.amount;
-  //   $scope.test = ""
-
-  //   $scope.$apply();
-  // });
+    $scope.amount =0;
 
     wishListService.getUrl(function(info){
     $scope.productName = info.title;
     $scope.url = info.url;
     $scope.getUrls = info.getUrls;
-    $scope.amount;
 
     $scope.$apply();
   });
 
-  $scope.updateView = function(){
-    chrome.storage.onChange.addListener(function(changes, namespace){
-      for(var key in $scope.test){
-        var storageChange = changes[key];
-        console.log('change recieved!');
-      }
-    })
-  }
 
   $scope.save = function(){
     chrome.storage.local.get({wishList: []}, function(result){
@@ -60,6 +42,7 @@ wishListApp.controller('wishListCtrl', function($scope, wishListService){
       chrome.storage.local.set({wishList: wishList}, function(){
         chrome.storage.local.get('wishList', function(result){
           $scope.test = result.wishList;
+          // console.log($scope.test);
         });
       });     
     })
