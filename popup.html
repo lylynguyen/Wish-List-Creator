@@ -4,35 +4,36 @@
 <html ng-app="wishListApp" ng-csp>
   <head>
     <title>Wish List</title>
-
+    <script src"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/popup.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/popup.css">
-    
+    <link rel="stylesheet" type="text/css" href="assets/styles/popup.css"></link>
   </head>
-  <body ng-controller="wishListCtrl">
-  <h4>Wish List Creator</h4>
-     <!-- <div class="message">message : {{ message }}</div> -->
-     <input ng-model="test">
-     <div class="product">Product Name: {{ productName }}</div>
-     <div class="url">Product Url: {{ url }}</div>
-     <!-- <div class="model">tab: {{ response }}</div> -->
-    <form class="price-form" ng-submit="save()">
-      <h4>Please include a price and hit submit to update your wish list.</h4>
-      Price: <input type="number" ng-model="amount"><input type="submit">
-      <!-- <span id="currency-default">{{ amount | currency }}</span> -->
-    </form> 
+  <body>
+    <div ng-controller="wishListCtrl" ng-init="getUrl()" class="container">
+      <div class="row">
+        <div class="col-xs-12" align="center">
+          <h3>Wish List Creator</h3>
+          <form class="price-form" ng-submit="save()">
+            <label>Price: </label>
+            <input type="number" ng-model="amount"/><input type="submit"/>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <ol>
+            <li ng-repeat='item in test'>
+              <span>Product: {{item.Product}}</span>
+              Website: <a href="{{item.URL}}">link</a>
+              <span>Price: ${{item.Price}}</span>
+              <button type="button" class="btn btn-default" ng-click="delete(test)">Remove</button>
 
-    <div>{{test}}</div>
-    <input ng-model="test">  
-    <ul>
-      <li ng-repeat='item in test'>
-        <span>Product: {{item.Product}} </span> <br>  
-        <span>Link:{{item.URL}}</span> <br> 
-        <span>Price: ${{item.Price}}</span> <br> 
-      </li>
-
-    </ul> 
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 
