@@ -14,7 +14,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["bower_components/angular/angular.js", "js/popup.js", "js/url.js"],
+      "js": ["bower_components/angular/angular.js", "js/popup.js"],
       "run_at": "document_start"
     }
   ],
