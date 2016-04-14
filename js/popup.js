@@ -1,4 +1,4 @@
-var wishListApp = angular.module('wishListApp', []);
+var wishListApp = angular.module('wishListApp', ['ngMaterial']);
 
 wishListApp.service('wishListService', function () {
   this.getUrl = function(callback) {

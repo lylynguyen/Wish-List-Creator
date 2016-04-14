@@ -4,15 +4,17 @@
 <html ng-app="wishListApp" ng-csp>
   <head>
     <title>Wish List</title>
-    <script src"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="js/popup.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/styles/popup.css"></link>
   </head>
   <body>
     <div ng-controller="wishListCtrl" ng-model="getUrl()" class="container">
-      <div class="row">
-        <div class="col-xs-12" align="center">
+      <div>
+        <div align="center">
           <h3>Wish List Creator</h3>
           <form class="price-form" ng-submit="save(); getUrl()">
             <label>Price: </label>
@@ -20,19 +22,24 @@
           </form>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12" align="center">
+      <div>
+        <div align="center">
           Search: <input type="text" ng-model="query">
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
+      <div>
+        <div>
           <ol>
             <li ng-repeat="item in list | filter:query">
               <span>Product: {{item.Product}}</span>
               Website: <a href="{{item.URL}}">link</a>
               <span>Price: ${{item.Price}}</span>
-              <button ng-click="delete(person)"><i class="icon-remove"></i><i class="icon-pencil"></i></button>
+           <!--    <md-button ng-click="delete(item)">remove
+                <md-icon md-svg-src ="/assets/images/delete.svg">
+                </md-icon>
+              </md-button> -->
+              <!-- <md-icon ng-click="delete(person)" md-svg-src ="/assets/images/delete.svg"></md-icon> -->
+              <button ng-click="delete(person)">Remove</button>
             </li>
           </ol>
         </div>
