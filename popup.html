@@ -22,20 +22,17 @@
       </div>
       <div class="row">
         <div class="col-xs-12" align="center">
-          <!-- <label>Search: </label> -->
           Search: <input type="text" ng-model="query">
-                  </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <ol>
             <li ng-repeat="item in list | filter:query">
-              <!-- <img src="{{item.URL}}"> -->
               <span>Product: {{item.Product}}</span>
               Website: <a href="{{item.URL}}">link</a>
               <span>Price: ${{item.Price}}</span>
-              <button type="button" class="btn btn-default" ng-click="delete(item)">Remove</button>
-
+              <button ng-click="delete(person)"><i class="icon-remove"></i><i class="icon-pencil"></i></button>
             </li>
           </ol>
         </div>

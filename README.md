@@ -1,2 +1,5 @@
-#mvp
-This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
+# Wish List
+
+Chrome extension for avid shoppers to create a “wish list” of desired items, storing prices and links to future purchases.
+
+
