@@ -12,13 +12,13 @@
     <link rel="stylesheet" type="text/css" href="assets/styles/popup.css"></link>
   </head>
   <body>
-    <div ng-controller="wishListCtrl" ng-model="getUrl()" class="container">
+    <div ng-controller="wishListCtrl">
       <div>
         <div align="center">
           <h3>Wish List Creator</h3>
-          <form class="price-form" ng-submit="save(); getUrl()">
+          <form class="price-form" ng-model=getUrl() ng-submit="save()">
             <label>Price: </label>
-            <input type="number" ng-model="amount" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required/><input type="submit"/>
+            <input type="number" ng-model="amount" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required/> <input type="submit"/>
           </form>
         </div>
       </div>
@@ -34,12 +34,7 @@
               <span>Product: {{item.Product}}</span>
               Website: <a href="{{item.URL}}">link</a>
               <span>Price: ${{item.Price}}</span>
-           <!--    <md-button ng-click="delete(item)">remove
-                <md-icon md-svg-src ="/assets/images/delete.svg">
-                </md-icon>
-              </md-button> -->
-              <!-- <md-icon ng-click="delete(person)" md-svg-src ="/assets/images/delete.svg"></md-icon> -->
-              <button ng-click="delete(person)">Remove</button>
+              <button ng-click="delete(item)">Remove</button>
             </li>
           </ol>
         </div>

@@ -1,4 +1,5 @@
-var wishListApp = angular.module('wishListApp', ['ngMaterial']);
+var wishListApp = angular.module('wishListApp', [])
+
 
 wishListApp.service('wishListService', function () {
   this.getUrl = function(callback) {
@@ -41,14 +42,16 @@ wishListApp.controller('wishListCtrl', function($scope, wishListService){
     })
   };
 
-  $scope.delete = function (idx) {
-    chrome.local.storage.remove(item);
-    // chrome.storage.local.get({wishList: []}, function (item) {
-    //   item.wishList.splice(0,1);
-    //   chrome.storage.local.set(item, function () {
-    //     console.log('deleted!');
-    //   })
-    // })
+  $scope.delete = function(item) {
+    var index = $scope.list.indexOf(item);
+    $scope.list.splice(index,1);
+    chrome.storage.local.get({wishList:[]}, function (result) {
+      var wishList = result.wishList;
+      wishList.splice(index,1);
+      chrome.storage.local.set({wishList: wishList}, function (result) {
+        console.log("deleted an item");
+      })
+    })
   };
 });
 

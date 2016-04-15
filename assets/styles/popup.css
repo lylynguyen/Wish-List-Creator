@@ -6,10 +6,10 @@ body {
   width: 350px;
 }
 
-.container-fluid {
-  border-radius: 10px;
-  border-color: 'red';
+.price-form {
+  padding: 5px;
 }
+
 
 h3, label, span {
   font-family: Tahoma, Geneva, sans-serif;
