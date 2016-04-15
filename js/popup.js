@@ -28,8 +28,10 @@ wishListApp.controller('wishListCtrl', function($scope, wishListService){
       $scope.$apply();
       }
     );
-  }
+  };
 
+  $scope.capture = function (){
+  };
   $scope.save = function () {
     chrome.storage.local.get({wishList: []}, function (result) {
       var wishList = result.wishList;

@@ -8,13 +8,12 @@
   "browser_action": {
     "default_icon": "assets/images/kitty_mac.png",
     "default_popup": "popup.html"
-    // "default_title": "Click here!"
   },
 
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["bower_components/angular/angular.js","bower_components/angular-aria/angular-aria.js", "bower_components/angular-animate/angular-animate.js", "bower_components/angular-material/angular-material.js", "js/popup.js"],
+      "js": ["bower_components/angular/angular.js","bower_components/angular-aria/angular-aria.js", "bower_components/angular-animate/angular-animate.js", "bower_components/angular-material/angular-material.js", "js/popup.js", "js/server.js"],
       "run_at": "document_start"
     }
   ],
